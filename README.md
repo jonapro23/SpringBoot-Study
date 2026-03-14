@@ -94,3 +94,101 @@ A API estará disponível em: `http://localhost:8080`
 - **Java** com **Spring Boot**
 - **Spring Web** (REST API)
 - **Maven** (gerenciamento de dependências)
+
+----------------------------------------------
+
+# 🚀 Spring-Projeto - REST Web API
+
+A REST API built with **Spring Boot** for user management, with an in-memory simulated repository layer.
+
+---
+
+## 📁 Project Structure
+
+```
+src/main/java/com/example/demo/
+├── Controlleer/
+│   ├── Controller.java        # Welcome endpoint
+│   └── UserController.java    # User CRUD operations
+├── Model/
+│   └── User.java              # User entity
+├── Repository/
+│   └── UserRepository.java    # In-memory repository
+└── DemoApplication.java       # Main class
+```
+
+---
+
+## 📌 Endpoints
+
+### Main Controller
+| Method | Route | Description |
+|--------|-------|-------------|
+| `GET`  | `/`   | Returns a welcome message |
+
+### UserController (`/users`)
+| Method   | Route                 | Description                      |
+|----------|-----------------------|----------------------------------|
+| `GET`    | `/users`              | Returns a list of all users      |
+| `GET`    | `/users/{username}`   | Finds a user by username         |
+| `POST`   | `/users`              | Creates a new user               |
+| `DELETE` | `/users/{id}`         | Deletes a user by ID             |
+
+---
+
+## 🧩 Model: User
+
+| Field      | Type      | Description         |
+|------------|-----------|---------------------|
+| `id`       | `Integer` | Unique identifier   |
+| `login`    | `String`  | Username            |
+| `password` | `String`  | User password       |
+
+**Constructors:**
+- `User()` — empty constructor
+- `User(String login, String password)` — constructor with login and password
+
+**Methods:** `getId`, `setId`, `getLogin`, `setLogin`, `getPassword`, `setPassword`, `toString`
+
+---
+
+## 🗄️ Repository: UserRepository
+
+Simulated in-memory repository (no database). Operations are logged via `System.out.println`.
+
+| Method | Description |
+|--------|-------------|
+| `save(User usuario)` | Saves or updates a user (checks if `id` is null) |
+| `deleteById(Integer id)` | Deletes a user by ID |
+| `listAll()` | Returns a static list of users (Jonathan, Marcia) |
+| `finById(Integer id)` | Finds a user by ID (returns static user Gleyson) |
+| `findByUsername(String username)` | Finds a user by username (returns static user Jonathan) |
+
+> ⚠️ **Note:** The current repository uses static in-memory data with no real persistence. Intended for learning and prototyping purposes.
+
+---
+
+## ▶️ How to Run
+
+**Requirements:** Java 17+, Maven
+
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Navigate to the project folder
+cd Spring-Projeto
+
+# Run with Maven Wrapper
+./mvnw spring-boot:run
+```
+
+The API will be available at: `http://localhost:8080`
+
+---
+
+## 🛠️ Technologies
+
+- **Java** with **Spring Boot**
+- **Spring Web** (REST API)
+- **Maven** (dependency management)
