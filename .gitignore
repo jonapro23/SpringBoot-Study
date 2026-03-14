@@ -1,0 +1,73 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# ============================================
+# 🔒 PASTAS E ARQUIVOS SENSÍVEIS / DE RISCO
+# ============================================
+
+# Configurações da IDE (IntelliJ IDEA)
+.idea/
+
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs da aplicação
+*.log
+logs/
+
+# Arquivos de configuração com dados sensíveis
+src/main/resources/application-prod.properties
+src/main/resources/application-prod.yml
+src/main/resources/application-local.properties
+src/main/resources/application-local.yml
+
+# Variáveis de ambiente
+.env
+.env.*
+
+# Credenciais e chaves secretas
+*.pem
+*.key
+*.p12
+*.jks
+secrets/
+
+# Arquivos de cobertura de testes
+*.exec
+
+# Pasta de dependências externas (caso use npm/frontend)
+node_modules/
+
